@@ -7,15 +7,15 @@
         {% for person in persons %}
         <div class="col-md-4 mb-4">
             <div class="card">
-                <img src="{{ url_for('static', filename='registered_images/' + person[4]) }}" 
-                     class="card-img-top" alt="{{ person[0] }}"
+                <img src="{{ url_for('person_image', person_id=person[0]) }}" 
+                     class="card-img-top" alt="{{ person[1] }}"
                      style="height: 200px; object-fit: cover;">
                 <div class="card-body">
-                    <h5 class="card-title">{{ person[0] }}</h5>
+                    <h5 class="card-title">{{ person[1] }}</h5>
                     <p class="card-text">
-                        Age: {{ person[1] or 'N/A' }}<br>
-                        Function: {{ person[2] or 'N/A' }}<br>
-                        ID: {{ person[3] }}
+                        Age: {{ person[2] or 'N/A' }}<br>
+                        Function: {{ person[3] or 'N/A' }}<br>
+                        ID: {{ person[4] }}
                     </p>
                 </div>
             </div>
