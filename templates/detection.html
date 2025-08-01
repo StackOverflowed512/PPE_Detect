@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <h2 class="mb-4">Live Detection</h2>
+        <div class="video-container">
+            <img id="video-feed" src="{{ url_for('video_feed') }}" class="img-fluid">
+        </div>
+        <div class="mt-4">
+            <h3>Detection Status</h3>
+            <div id="detectionStatus" class="alert alert-info">
+                Waiting for detections...
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const statusDiv = document.getElementById('detectionStatus');
+        const videoFeed = document.getElementById('video-feed');
+        
+        videoFeed.onerror = function() {
+            statusDiv.textContent = "Error loading video feed. Please refresh the page.";
+            statusDiv.className = "alert alert-danger";
+        };
+        
+        videoFeed.onload = function() {
+            statusDiv.textContent = "Detection is running...";
+            statusDiv.className = "alert alert-success";
+        };
+    });
+</script>
+{% endblock %}

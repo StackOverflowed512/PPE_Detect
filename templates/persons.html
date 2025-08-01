@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h2 class="mb-4">Known Personnel</h2>
+    <div class="row">
+        {% for person in persons %}
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="{{ url_for('static', filename='registered_images/' + person[4]) }}" 
+                     class="card-img-top" alt="{{ person[0] }}"
+                     style="height: 200px; object-fit: cover;">
+                <div class="card-body">
+                    <h5 class="card-title">{{ person[0] }}</h5>
+                    <p class="card-text">
+                        Age: {{ person[1] or 'N/A' }}<br>
+                        Function: {{ person[2] or 'N/A' }}<br>
+                        ID: {{ person[3] }}
+                    </p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends "base.html" %} {% block content %}
+<div class="jumbotron">
+    <h1 class="display-4">Personnel Detection System</h1>
+    <p class="lead">
+        Welcome to the Personnel Detection and PPE Monitoring System
+    </p>
+    <hr class="my-4" />
+    <p>Choose an option to continue:</p>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+        <a class="btn btn-primary btn-lg me-md-2" href="/register" role="button"
+            >Register New Person</a
+        >
+        <a
+            class="btn btn-success btn-lg me-md-2"
+            href="/detection"
+            role="button"
+            >Start Detection</a
+        >
+        <a class="btn btn-info btn-lg" href="/persons" role="button"
+            >View Known Persons</a
+        >
+    </div>
+</div>
+{% endblock %}

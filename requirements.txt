@@ -1,0 +1,11 @@
+opencv-python
+face_recognition
+numpy
+Pillow
+ultralytics
+tk
+dlib>=19.19.0
+flask
+gunicorn
+werkzeug
+python-dotenv
